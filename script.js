@@ -16,10 +16,12 @@ async function startCameraAndScan() {
     // Start decoding from the video stream
     codeReader.decodeFromVideoElement(video, (result, error) => {
       if (result) {
-        console.log("Barcode detected:", result.text);
+        console.log("Barcode detected :", result.text);
+        alert("Barcode detected :", result.text);
       }
       if (error) {
-        console.error("Barcode decoding error:", error);
+        console.error("Barcode decoding error :", error);
+        alert("Something went wrong :", error);
       }
     });
   } catch (error) {
